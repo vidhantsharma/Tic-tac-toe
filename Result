@@ -1,0 +1,91 @@
+
+Welcome to Tic tac Toe
+
+
+please enter name for player 1 :
+Vidhant
+please enter name for player 2 :
+Someone
+Please pick a marker 'X' or 'O' for Vidhant
+X
+Vidhant : X
+Someone : O
+ 1 | 2 | 3 
+---|---|---
+ 4 | 5 | 6 
+---|---|---
+ 7 | 8 | 9  
+Vidhant, are you ready? Type Y to continueY
+please mention the place (1-9) where you want to place X1
+  X|   | 
+---|---|---
+   |   | 
+---|---|---
+   |   | 
+ 1 | 2 | 3 
+---|---|---
+ 4 | 5 | 6 
+---|---|---
+ 7 | 8 | 9  
+Someone, are you ready? Type Y to continueY
+please mention the place (1-9) where you want to place O2
+  X| O | 
+---|---|---
+   |   | 
+---|---|---
+   |   | 
+ 1 | 2 | 3 
+---|---|---
+ 4 | 5 | 6 
+---|---|---
+ 7 | 8 | 9  
+Vidhant, are you ready? Type Y to continueY
+please mention the place (1-9) where you want to place X5
+  X| O | 
+---|---|---
+   | X | 
+---|---|---
+   |   | 
+ 1 | 2 | 3 
+---|---|---
+ 4 | 5 | 6 
+---|---|---
+ 7 | 8 | 9  
+Someone, are you ready? Type Y to continueY
+please mention the place (1-9) where you want to place O3
+  X| O |O
+---|---|---
+   | X | 
+---|---|---
+   |   | 
+ 1 | 2 | 3 
+---|---|---
+ 4 | 5 | 6 
+---|---|---
+ 7 | 8 | 9  
+Vidhant, are you ready? Type Y to continueY
+please mention the place (1-9) where you want to place X9
+  X| O |O                                                      (GAME SHOULD HAVE FINISHED HERE BUT IT IS NOT HAPPENING)
+---|---|---
+   | X | 
+---|---|---
+   |   |X
+please mention the place (1-9) where you want to place X7
+  X| O |O
+---|---|---
+   | X | 
+---|---|---
+X  |   |X
+ 1 | 2 | 3    
+---|---|---
+ 4 | 5 | 6 
+---|---|---
+ 7 | 8 | 9  
+Someone, are you ready? Type Y to continueY
+please mention the place (1-9) where you want to place O6
+  X| O |O
+---|---|---
+   | X |O
+---|---|---
+X  |   |X
+Player 1 has Won
