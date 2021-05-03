@@ -1,0 +1,88 @@
+from IPython.display import clear_output
+
+def display_board ():
+    print('Welcome to Tic tac Toe\n\n')
+    
+def player_choice():
+    player1 = 'dummy1'
+    player2 = 'dummy2'
+    playername1 = input("please enter name for player 1 :\n")
+    playername2 = input("please enter name for player 2 :\n")
+    while player1 not in ['X','O']:
+        player1 = input(f"Please pick a marker 'X' or 'O' for {playername1}\n").upper()
+        if player1 not in ['X','O']:
+            print("Sorry, Invalid Choice!")
+            continue
+        if player1=='X':
+            player2='O'
+        else:
+            player2='X'
+        print(f'{playername1} : {player1}\n{playername2} : {player2}')   
+        return (playername1,playername2)
+        
+def place_marker_1(playername1,index,marker):
+    #board_index=[1,5,9,25,29,33,49,53,57]
+    index_number1=20
+    print(' 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9  ')
+    
+    while marker == 'X':
+        readiness1 = input(f'{playername1}, are you ready? Type Y to continue').upper()
+        while index_number1 not in range(1,9) and readiness1=='Y':
+            index_number1 = int(input("please mention the place (1-9) where you want to place X"))
+            if index_number1 not in range(1,10):
+                print('please type number between 1 to 9 only')
+                continue
+            if index[index_number1]=='O' or index[index_number1]=='X':
+                print('This position is already filled, please select different number')
+                index_number1=20
+                continue
+            index[index_number1]='X'  
+            print('  '+index[1]+'| '+index[2]+' |'+index[3]+'\n---|---|---\n'+index[4]+'  | '+index[5]+' |'+index[6]+'\n---|---|---\n'+index[7]+'  | '+ index[8]+' |'+index[9]+'')
+            marker='O'
+    return marker
+            
+def place_marker_2(playername2,index,marker):
+    #board_index=[1,5,9,25,29,33,49,53,57]
+    index_number2=20
+    print(' 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9  ')  
+    while marker == 'O':
+        readiness2 = input(f'{playername2}, are you ready? Type Y to continue').upper()
+        while index_number2 not in range(1,9) and readiness2=='Y':
+            index_number2 = int(input("please mention the place (1-9) where you want to place O"))
+            if index_number2 not in range(1,10):
+                print('please type number between 1 to 9 only')
+                continue
+            if index[index_number2]=='O' or index[index_number2]=='X':
+                print('This position is already filled, please select different number')
+                index_number2=20
+                continue  
+            index[index_number2]='O'  
+            print('  '+index[1]+'| '+index[2]+' |'+index[3]+'\n---|---|---\n'+index[4]+'  | '+index[5]+' |'+index[6]+'\n---|---|---\n'+index[7]+'  | '+ index[8]+' |'+index[9]+'')    
+            marker='X'
+    return marker       
+        
+def win_check(index):
+    if (index[1]=='X' and index[2]=='X' and index[3]=='X') or (index[4]=='X' and index[5]=='X' and index[6]=='X') or (index[7]=='X' and index[8]=='X' and index[9]=='X') or (index[1]=='X' and index[4]=='X' and index[7]=='X') or (index[2]=='X' and index[5]=='X' and index[8]=='X') or (index[3]=='X' and index[6]=='X' and index[9]=='X') or (index[1]=='X' and index[5]=='X' and index[9]=='X') or (index[3]=='X' and index[5]=='X' and index[7]=='X'):
+        return False
+    elif (index[1]=='O' and index[2]=='O' and index[3]=='O') or (index[4]=='O' and index[5]=='O' and index[6]=='O') or (index[7]=='O' and index[8]=='O' and index[9]=='O') or (index[1]=='O' and index[4]=='O' and index[7]=='O') or (index[2]=='O' and index[5]=='O' and index[8]=='O') or (index[3]=='O' and index[6]=='O' and index[9]=='O') or (index[1]=='O' and index[5]=='O' and index[9]=='O') or (index[3]=='O' and index[5]=='O' and index[7]=='O'):
+        return False
+    else:
+        return True
+        
+
+def game_on():
+    display_board()
+    (playername1,playername2)=player_choice()
+    index=[' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']
+    marker='X'
+    while win_check(index):
+        while marker=='X':
+            marker = place_marker_1(playername1,index,marker)
+            break
+        while marker=='O':
+            marker = place_marker_2(playername2,index,marker)
+            break
+    if (index[1]=='X' and index[2]=='X' and index[3]=='X') or (index[4]=='X' and index[5]=='X' and index[6]=='X') or (index[7]=='X' and index[8]=='X' and index[9]=='X') or (index[1]=='X' and index[4]=='X' and index[7]=='X') or (index[2]=='X' and index[5]=='X' and index[8]=='X') or (index[3]=='X' and index[6]=='X' and index[9]=='X') or (index[1]=='X' and index[5]=='X' and index[9]=='X') or (index[3]=='X' and index[5]=='X' and index[7]=='X'):
+        print('Player 1 has Won')
+    elif (index[1]=='O' and index[2]=='O' and index[3]=='O') or (index[4]=='O' and index[5]=='O' and index[6]=='O') or (index[7]=='O' and index[8]=='O' and index[9]=='O') or (index[1]=='O' and index[4]=='O' and index[7]=='O') or (index[2]=='O' and index[5]=='O' and index[8]=='O') or (index[3]=='O' and index[6]=='O' and index[9]=='O') or (index[1]=='O' and index[5]=='O' and index[9]=='O') or (index[3]=='O' and index[5]=='O' and index[7]=='O'):
+        print('Player 2 has Won')
